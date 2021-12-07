@@ -8,9 +8,9 @@ import {
 	categoryMutations,
 	categoryQueries,
 	categoryTypeDef
-} from './supermarket/categories/typeDefs';
+} from './linking/auth/typeDefs';
 
-import categoryResolvers from './supermarket/categories/resolvers';
+import categoryResolvers from './linking/auth/resolvers';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
