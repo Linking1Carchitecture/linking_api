@@ -1,4 +1,4 @@
-export const categoryTypeDef = `
+export const authTypeDef = `
   type User {
     username: String!
     email:  String!
@@ -34,13 +34,13 @@ export const categoryTypeDef = `
   }
   `;
 
-export const categoryQueries = `
+export const authQueries = `
       profile(token:Usertoken!):User!
       uservalidation(token:Usertoken!):User!
       image(image:Imageinput!):Image!
   `;
 
-export const categoryMutations = `
+export const authMutations = `
     signup(user: UserInput!): User!
     signin(user: LoginInput!): token!
     profile(user:UserupdInput): User!
