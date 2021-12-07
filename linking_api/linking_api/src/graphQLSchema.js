@@ -28,10 +28,17 @@ import {
 	backgroundsTypeDef 
 } from './linking/backgrounds/typeDefs';
 
+import { 
+	boardMutations, 
+	boardQueries, 
+	boardTypeDef 
+} from './linking/boards/typeDefs';
+
 import categoryResolvers from './linking/auth/resolvers';
 import categoryResolvers2 from './linking/creation/resolvers';
 import categoryResolvers3 from './linking/backgrounds/resolvers';
 import categoryResolvers4 from './linking/settings/resolvers';
+import categoryResolvers5 from './linking/boards/resolvers';
 
 
 
@@ -42,19 +49,22 @@ const mergedTypeDefs = mergeSchemas(
 		categoryTypeDef,
 		authTypeDef,
 		configTypeDef,
-		backgroundsTypeDef
+		backgroundsTypeDef,
+		boardTypeDef
 	],
 	[
 		categoryQueries,
 		authQueries,
 		configQueries,
-		backgroundsQueries
+		backgroundsQueries,
+		boardQueries
 	],
 	[
 		categoryMutations,
 		authMutations,
 		configMutations,
-		backgroundsMutations
+		backgroundsMutations,
+		boardMutations
 	]
 );
 
@@ -66,6 +76,7 @@ export default makeExecutableSchema({
 		categoryResolvers,
 		categoryResolvers2,
 		categoryResolvers3,
-		categoryResolvers4
+		categoryResolvers4,
+		categoryResolvers5
 	)
 });
