@@ -11,9 +11,9 @@ import {
 } from './linking/auth/typeDefs';
 
 import {
-	categoryMutations,
-	categoryQueries,
-	categoryTypeDef
+	creationMutations,
+	creationQueries,
+	creationTypeDef
 } from './linking/creation/typeDefs';
 
 import { 
@@ -46,21 +46,21 @@ import categoryResolvers5 from './linking/boards/resolvers';
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
-		categoryTypeDef,
+		creationTypeDef,
 		authTypeDef,
 		configTypeDef,
 		backgroundsTypeDef,
 		boardTypeDef
 	],
 	[
-		categoryQueries,
+		creationQueries,
 		authQueries,
 		configQueries,
 		backgroundsQueries,
 		boardQueries
 	],
 	[
-		categoryMutations,
+		creationMutations,
 		authMutations,
 		configMutations,
 		backgroundsMutations,
