@@ -2,22 +2,22 @@ export const configTypeDef = `
   type Configuration {
       config_id: Int!
       user_email: String!      
-      subtitles: Boolean!
       background_id: Int
-      in_device: String
-      out_device: String
+      in_audio: String
+      out_audio: String
+      in_video: String
   }
   input newConfig {
       user_email: String!      
-      subtitles: Boolean!
-      in_device: String
-      out_device: String
+      in_audio: String
+      out_audio: String
+      in_video: String
   }
   input updateConfig {
     config_id: Int!      
-    subtitles: Boolean!
-    in_device: String
-    out_device: String
+    in_audio: String
+    out_audio: String
+    in_video: String
   }
 `;
 
