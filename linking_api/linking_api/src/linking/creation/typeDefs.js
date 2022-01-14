@@ -1,15 +1,15 @@
 export const creationTypeDef = `
   type Creation {
     id_llam: String
-    email: String!
     organization: String!
     begin_Date: String!
+    token: String!
   }
   input CreationInput {
     id_llam: String!
-    email: String!
     organization: String!
     begin_Date: String!
+    token: String!
   }`;
 
 export const creationQueries = `
@@ -19,5 +19,5 @@ export const creationQueries = `
 
 export const creationMutations = `
     normal(creation: CreationInput!): Creation
-    fecha(creation: CreationInput!): Creation!
+    fecha(creation: CreationInput!): Creation
 `;
