@@ -31,6 +31,24 @@ export async function generalRequest(url, method, body,header ,fullResponse) {
 	}
 }
 
+
+
+export async function requestToken(token) {
+  let url = 'http://host.docker.internal:3000/auth/profile';
+	const parameters = {
+		method:'GET',
+		uri: encodeURI(url),
+		json: true,
+		headers:{'authtoken' : token}
+	};
+
+	try {
+		return await request(parameters);
+	} catch (err) {
+		return err;
+	}
+}
+
 /**
  * Adds parameters to a given route
  * @param {string} url

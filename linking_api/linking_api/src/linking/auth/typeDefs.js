@@ -20,7 +20,8 @@ export const authTypeDef = `
   input LoginInput {
     email:  String!
     password:String!
-  }input Usertoken {
+  }
+  input Usertoken {
     token: String!
   }
   input UserupdInput {

@@ -1,16 +1,17 @@
 export const boardTypeDef = `
   type Board {
     id: Int!
-    user_id: Int!
-    meeting_id: Int
+    meeting_id: String!
     image: String
     updated_at: String
-    created_at: String!
+    created_at: String
+    token: String
   }
   input BoardInput {
-    user_id: Int!
-    meeting_id: Int!
+    image: String!
+    meeting_id: String!
     updated_at: String
+    token: String!
   }`;
 
 export const boardQueries = `

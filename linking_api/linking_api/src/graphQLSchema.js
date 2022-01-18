@@ -32,13 +32,20 @@ import {
 	boardMutations, 
 	boardQueries, 
 	boardTypeDef 
-} from './linking/boards/typeDefs';
+} from './linking/activities/boards/typeDefs';
+
+import { 
+	recordingMutations, 
+	recordingQueries, 
+	recordingTypeDef 
+} from './linking/activities/recordings/typeDefs';
 
 import categoryResolvers from './linking/auth/resolvers';
 import categoryResolvers2 from './linking/creation/resolvers';
 import categoryResolvers3 from './linking/backgrounds/resolvers';
 import categoryResolvers4 from './linking/settings/resolvers';
-import categoryResolvers5 from './linking/boards/resolvers';
+import categoryResolvers5 from './linking/activities/boards/resolvers';
+import categoryResolvers6 from './linking/activities/recordings/resolvers';
 
 
 
@@ -50,21 +57,24 @@ const mergedTypeDefs = mergeSchemas(
 		authTypeDef,
 		configTypeDef,
 		backgroundsTypeDef,
-		boardTypeDef
+		boardTypeDef,
+    recordingTypeDef
 	],
 	[
 		creationQueries,
 		authQueries,
 		configQueries,
 		backgroundsQueries,
-		boardQueries
+		boardQueries,
+    recordingQueries
 	],
 	[
 		creationMutations,
 		authMutations,
 		configMutations,
 		backgroundsMutations,
-		boardMutations
+		boardMutations,
+    recordingMutations
 	]
 );
 
@@ -77,6 +87,7 @@ export default makeExecutableSchema({
 		categoryResolvers2,
 		categoryResolvers3,
 		categoryResolvers4,
-		categoryResolvers5
+		categoryResolvers5,
+		categoryResolvers6
 	)
 });

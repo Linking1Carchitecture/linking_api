@@ -30,7 +30,6 @@ async function creatoken(creation){
 	};
 	try{
 		const creationn = await request(parametrers);
-		console.log(creationn.email)
 		const reunion_aux={
 			id_llam: creation.id_llam,
     		email: creationn.email,
