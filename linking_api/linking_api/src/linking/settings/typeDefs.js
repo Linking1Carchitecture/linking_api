@@ -1,34 +1,34 @@
 export const configTypeDef = `
   type Configuration {
       config_id: Int!
-      user_id: Int!      
-      subtitles: Boolean!
+      user_email: String!      
       background_id: Int
-      in_device: String!
-      out_device: String!
+      in_audio: String
+      out_audio: String
+      in_video: String
   }
   input newConfig {
-      user_id: Int!      
-      subtitles: Boolean!
-      in_device: String!
-      out_device: String!
+      user_email: String!      
+      in_audio: String
+      out_audio: String
+      in_video: String
   }
   input updateConfig {
     config_id: Int!      
-    subtitles: Boolean!
-    in_device: String!
-    out_device: String!
+    in_audio: String
+    out_audio: String
+    in_video: String
   }
 `;
 
 export const configQueries = `
       allConfig: [Configuration]!
-      userConfig(user_id: Int!): Configuration!
+      userConfig(user_email: String!): Configuration!
   `;
 
 export const configMutations = `
     createConfig(configuration: newConfig!): Configuration!
     updateConfig(configuration: updateConfig!): String!
-    updateUserBackground(user_id: Int!, background_id: Int): String!
+    updateUserBackground(user_email: String!, background_id: Int): String!
     deleteConfig(config_id: Int!): String!
 `;

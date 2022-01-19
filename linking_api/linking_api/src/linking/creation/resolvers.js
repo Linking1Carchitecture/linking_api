@@ -54,7 +54,7 @@ async function creatoken(creation){
 			json:true
 		}
 		const newcreation = await request(reunion);
-		const newactivities = await request(actividad);
+		// const newactivities = await request(actividad);
 		return newcreation
 	}
 	catch(err){
