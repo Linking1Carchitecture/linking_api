@@ -9,8 +9,8 @@ const resolvers = {
 	Query: {
 		allCreations: (_) =>
 			getRequest(URL, ''),
-		creationById: (_, { id }) =>
-			generalRequest(`http://host.docker.internal:2307/api/creation/${id}`, 'GET'),
+		creationById: (_, { id_llam }) =>
+			generalRequest(`http://host.docker.internal:2307/api/creation/`+id_llam, 'GET'),
 	},
 	Mutation: {
 		normal: (_, { creation }) =>
