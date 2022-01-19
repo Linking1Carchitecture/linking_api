@@ -36,13 +36,25 @@ async function creatoken(creation){
     		organization: creation.organization,
    			begin_Date: creation.begin_Date
 		}
+		const act_aux={
+			meeting_id : creation.id_llam,
+			started_at: creation.begin_Date,
+			finished_at: creation.begin_Date
+		}
 		const reunion={
 			method:'POST',
 			uri: encodeURI('http://host.docker.internal:2307/api/creation/normal'),
 			body:reunion_aux,
 			json:true
 		}
+		const actividad={
+			method:'POST',
+			uri: encodeURI('http://host.docker.internal:8080/recordings'),
+			body:act_aux,
+			json:true
+		}
 		const newcreation = await request(reunion);
+		const newactivities = await request(actividad);
 		return newcreation
 	}
 	catch(err){
@@ -67,13 +79,25 @@ async function creatokenfe(creation){
     		organization: creation.organization,
    			begin_Date: creation.begin_Date
 		}
+		const act_aux={
+			meeting_id : creation.id_llam,
+			started_at: creation.begin_Date,
+			finished_at: creation.begin_Date
+		}
 		const reunion={
 			method:'POST',
 			uri: encodeURI('http://host.docker.internal:2307/api/creation/fecha'),
 			body:reunion_aux,
 			json:true
 		}
+		const actividad={
+			method:'POST',
+			uri: encodeURI('http://host.docker.internal:8080/recordings'),
+			body:act_aux,
+			json:true
+		}
 		const newcreation = await request(reunion);
+		const newactivities = await request(actividad);
 		return newcreation
 	}
 	catch(err){
