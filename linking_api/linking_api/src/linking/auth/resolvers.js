@@ -19,6 +19,8 @@ const resolvers = {
 			generalRequest(`${URL}/signin`, 'POST', user),
 		profile:(_, { user }) =>
 			generalRequest(`${URL}/profile`, 'PUT', user,{'authtoken' : user.token}),
+		validateuser:(_, { code }) =>
+		generalRequest(`${URL}/confirm/${code.code}`, 'GET'),
 	}
 };
 

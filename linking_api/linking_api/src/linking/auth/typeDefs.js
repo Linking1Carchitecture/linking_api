@@ -33,6 +33,9 @@ export const authTypeDef = `
   input Imageinput {
     image: String!
   }
+  input Usercode{
+    code:String
+  }
   `;
 
 export const authQueries = `
@@ -45,4 +48,5 @@ export const authMutations = `
     signup(user: UserInput!): User!
     signin(user: LoginInput!): token!
     profile(user:UserupdInput): User!
+    validateuser(code:Usercode):User!
 `;
